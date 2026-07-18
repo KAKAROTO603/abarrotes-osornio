@@ -115,14 +115,6 @@ const Login = () => {
               Crear cuenta nueva
             </Link>
           </div>
-
-          <div className="mt-4 p-3 bg-light rounded">
-            <small className="text-muted d-block text-center">
-              <strong>Demo:</strong><br />
-              Admin: admin@osornio.com / admin123<br />
-              Cliente: cliente@osornio.com / cliente123
-            </small>
-          </div>
         </div>
       </motion.div>
     </div>
