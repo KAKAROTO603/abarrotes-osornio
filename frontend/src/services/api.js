@@ -1,11 +1,20 @@
 import axios from 'axios';
 
-// Configuración base para conectarse al backend
 const api = axios.create({
-  baseURL: 'http://localhost:5000', // URL de tu servidor Node.js
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000',
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  withCredentials: true
 });
+
+// Interceptor para manejar errores
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error('Error en la petición:', error);
+    return Promise.reject(error);
+  }
+);
 
 export default api;
